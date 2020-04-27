@@ -1,0 +1,35 @@
+.contacts {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  a {
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    &::before {
+      content: '';
+      margin-right: 10px;
+    }
+    &_phone {
+      &::before {
+        width: 20px;
+        height: 20px;
+        background-image: url('/img/phone.svg');
+      }
+    }
+
+    &_email {
+      &::before {
+        width: 29px;
+        height: 20px;
+        background-image: url('/img/email.svg');
+      }
+    }
+  }
+}

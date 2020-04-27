@@ -1,0 +1,8 @@
+mixin contactItem(type, href, label)
+  li(class= 'contacts__item contacts__item_' + type)
+    a(href= href, target='_blank')= label
+
+ul.contacts
+  +contactItem('phone', 'tel:+78007005226', '+7 (800) 700-52-26')
+  +contactItem('phone', 'tel:+78123465226', '+7 (812) 346-52-26')
+  +contactItem('email', 'href:sale@letfix', 'sale@letfix')

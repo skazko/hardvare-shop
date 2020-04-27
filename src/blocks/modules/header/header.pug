@@ -1,0 +1,36 @@
+include ../../components/logo/logo
+include ../../components/icon/icon
+
+mixin catalogItem(label, href)
+  li
+    a(href= href)
+      span= label
+      .icon
+        +icon('arrow-down')
+      
+
+header.header
+  .header__gray
+    .container
+      .header__top
+        .header__search
+          include ../../components/search/search
+        nav.header__top-menu
+          include ../../components/top-menu/top-menu
+  .header__white
+    .container
+      .header__info
+        +logo('header__logo ')
+        .header__contacts
+          include ../../components/contacts/contacts
+        .header__cart
+          include ../../components/header-cart/header-cart
+  .header__catalog
+    ul
+      +catalogItem('Крепеж', '#')
+      +catalogItem('Такелаж', '#')
+      +catalogItem('Грузоподъемное оборудование', '#')
+      +catalogItem('Инструмент', '#')
+  .header__banner
+    .container
+      include ../../components/slider/slider

@@ -1,0 +1,104 @@
+.header {
+  &__gray {
+    background-color: #e6e8ec;
+  }
+
+  &__top {
+    @include row-flex();
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__search {
+    padding: 15px 0;
+    @include col();
+    @include size(3);
+    @include size-lg(4);
+  }
+  &__top-menu {
+    @include col();
+    @include size(6);
+    @include size-lg(8);
+  }
+
+  &__info {
+    @include row-flex();
+    align-items: center;
+
+    & > * {
+      @include col();
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+  }
+
+  &__logo {
+    margin-right: 65px;
+  }
+
+  &__contacts {
+    @include size(6.2);
+    @include size-xl(4);
+    .contacts {
+      @include xl(flex-wrap, wrap);
+
+      &__item {
+        @include xl(margin-bottom, 5px);
+      }
+    }
+  }
+
+  &__cart {
+    margin-left: auto;
+  }
+
+  &__catalog {
+    background-color: #e21e23;
+    ul {
+      max-width: 1920px;
+      margin: 0 auto;
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    a {
+      display: flex;
+      justify-content: center;
+
+      text-transform: uppercase;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 30px 45px 24px;
+    }
+
+    a,
+    a:visited {
+      color: #ffffff;
+    }
+
+    li {
+      flex-grow: 1;
+      border-left: 1px solid #ffffff;
+      &:last-of-type {
+        border-right: 1px solid #ffffff;
+      }
+    }
+
+    .icon {
+      width: 15px;
+      height: 15px;
+      margin-left: 5px;
+      flex-shrink: 0;
+    }
+  }
+
+  &__banner {
+    background-color: #bec0c4;
+    background-image: url('../img/banner.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}

@@ -1,0 +1,14 @@
+include ../icon/icon
+
+mixin sliderItem(iconName, offerTitle, buttonTitle, link)
+  .slider__item
+    .slider__icon
+      +icon(iconName)
+    .slider__title= offerTitle
+    a.slider__button(href= link)= buttonTitle
+
+.slider
+  .slider__arrow.slider__arrow_left
+  .slider__container
+    +sliderItem('percent', 'Скидки и бонусы при оформлении заказа на сайте', 'Подробнее', '#')
+  .slider__arrow.slider__arrow_right
