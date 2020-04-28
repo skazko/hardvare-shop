@@ -1,0 +1,28 @@
+include ../../components/icon/icon
+
+mixin product()
+  li.seen-before.products__item
+    .seen-before__image
+      img(src="img/dubel.jpg", alt="Дюбель 4х20 нейлон, Expandet")
+    .seen-before__info
+      .seen-before__title Дюбель 4х20 нейлон, Expandet
+      ul.seen-before__features
+        li.seen-before__feature Артикул: 102000150
+        li.seen-before__feature Упаковка: 100 шт.
+        li.seen-before__feature.seen-before__feature_tomorrow
+          +icon('i-tomorrow')
+          span Получить завтра
+      form.seen-before__order(action="#")
+        .seen-before__count
+          input(type="number", name="count", value="1")
+        .seen-before__order-button
+          div 83,60 ₽
+          input(type="submit", value="Купить")
+
+section.seen-before-products
+  .container
+    .title Вы просматривали ранее     
+    ul.products
+      +product()
+      +product()
+      +product()

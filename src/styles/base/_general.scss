@@ -10,7 +10,7 @@ ul {
 }
 
 body {
-  font-family: 'PF BeauSans Pro';
+  font-family: 'PF BeauSans Pro', sans-serif;
   color: #0a0a0a;
 }
 
@@ -42,4 +42,9 @@ a:visited {
 
 .row {
   @include row-flex();
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 700;
 }
