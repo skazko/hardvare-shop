@@ -1,0 +1,11 @@
+.product-categories {
+  padding-top: 45px;
+  padding-bottom: 85px;
+}
+
+.categories {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  @include row-flex();
+}

@@ -1,0 +1,17 @@
+include ../icon/icon
+
+mixin category(title, img, list, more)
+  li.category
+    .category__title
+      a(href="#")= title
+    .category__image
+      .category__image-container
+        img(src= img, alt= title)
+    ul.category__list
+      each item in list
+        li.category__item
+          a.category__link(href="#")= item
+      if more
+        li.category__show-more
+          a.category__link(href="#") Показать ещё
+            +icon('arrow-down-red')
