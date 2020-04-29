@@ -1,0 +1,8 @@
+mixin breadcrumbs(list)
+  .breadcrumbs-wrapper
+    .container
+      nav.breadcrumbs
+        each item, index in list
+          a(href="#")= item
+          if list.length - index != 1
+            span.breadcrumbs__separator /

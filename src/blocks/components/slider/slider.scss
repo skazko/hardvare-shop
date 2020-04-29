@@ -41,6 +41,11 @@
     align-items: center;
     padding-right: 120px;
     padding-left: 95px;
+
+    @media (max-width: 1200px) {
+      padding-right: 50px;
+      padding-left: 50px;
+    }
   }
 
   &__arrow {
@@ -49,6 +54,10 @@
     border-radius: 50%;
     cursor: pointer;
     flex-shrink: 0;
+
+    @media (max-width: 1024px) {
+      display: none;
+    }
 
     &_left {
       margin-right: 73px;

@@ -1,0 +1,15 @@
+.breadcrumbs {
+  padding: 20px 0px;
+  color: #bec0c4;
+  font-size: 18px;
+  font-weight: 400;
+
+  a:last-of-type,
+  a:last-of-type:visited {
+    color: #0a0a0a;
+  }
+
+  &__separator {
+    margin: 0px 6px;
+  }
+}

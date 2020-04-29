@@ -1,23 +1,29 @@
 .seen-before-products {
   border-top: 1px solid #e6e8ec;
 
+  .title {
+    @include title(400);
+    margin-bottom: 15px;
+    margin-top: 50px;
+  }
+
   .products {
     list-style: none;
     margin: 0;
     padding: 0;
-    margin-bottom: 120px;
+    margin-bottom: 105px;
 
     @include row-flex();
 
     &__item {
+      padding-top: 15px;
+      padding-bottom: 15px;
       @include col();
       @include size(4);
+      @include size-xl(6);
+      @include size-lg(8);
+      @include size-md(12);
     }
-  }
-
-  .title {
-    margin-bottom: 30px;
-    margin-top: 50px;
   }
 }
 

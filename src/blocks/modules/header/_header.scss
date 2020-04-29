@@ -1,3 +1,14 @@
+.dropdown-submenu {
+  z-index: 10;
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: #e6e8ec;
+  color: #0a0a0a;
+  visibility: hidden;
+}
+
 .header {
   &__gray {
     background-color: #e6e8ec;
@@ -14,11 +25,14 @@
     @include col();
     @include size(3);
     @include size-lg(4);
+    @include size-md(12);
   }
   &__top-menu {
+    padding: 15px 0;
     @include col();
     @include size(6);
     @include size-lg(8);
+    @include size-md(12);
   }
 
   &__info {
@@ -39,6 +53,7 @@
   &__contacts {
     @include size(6.2);
     @include size-xl(4);
+    @include size-md(6);
     .contacts {
       @include xl(flex-wrap, wrap);
 
@@ -54,35 +69,41 @@
 
   &__catalog {
     background-color: #e21e23;
-    ul {
+    color: #ffffff;
+    position: relative;
+
+    .catalog {
       max-width: 1920px;
       margin: 0 auto;
       list-style: none;
       padding: 0;
       display: flex;
       justify-content: space-between;
-    }
 
-    a {
-      display: flex;
-      justify-content: center;
+      @media (max-width: 900px) {
+        flex-direction: column;
+      }
 
-      text-transform: uppercase;
-      font-size: 18px;
-      font-weight: bold;
-      padding: 30px 45px 24px;
-    }
+      &__item {
+        flex-grow: 1;
+        border-left: 1px solid #ffffff;
+        &:last-of-type {
+          border-right: 1px solid #ffffff;
+        }
 
-    a,
-    a:visited {
-      color: #ffffff;
-    }
+        &:hover > .dropdown-submenu,
+        &:focus-within > .dropdown-submenu {
+          visibility: visible;
+        }
+      }
 
-    li {
-      flex-grow: 1;
-      border-left: 1px solid #ffffff;
-      &:last-of-type {
-        border-right: 1px solid #ffffff;
+      &__link {
+        display: flex;
+        justify-content: center;
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 30px 45px 24px;
       }
     }
 

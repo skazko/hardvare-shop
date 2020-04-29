@@ -28,12 +28,20 @@ img {
 
 a {
   position: relative;
+  text-decoration: none;
 }
 
 a,
 a:visited {
-  color: #0a0a0a;
-  text-decoration: none;
+  color: inherit;
+}
+
+[type='button'],
+[type='submit'],
+button {
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .container {
@@ -44,7 +52,18 @@ a:visited {
   @include row-flex();
 }
 
-.title {
-  font-size: 22px;
-  font-weight: 700;
+.products-title {
+  margin: 40px 0 20px;
+  font-weight: bold;
+  font-size: 35px;
+}
+
+.products-description {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.products-header {
+  margin-bottom: 60px;
 }

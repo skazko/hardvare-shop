@@ -1,0 +1,49 @@
+include ../../components/icon/icon
+
+mixin socialLink(link, icon)
+  li.social__item
+    a(href= link, target="_blank")
+      +icon(icon)
+
+mixin menuLink(title)
+  li.footer__menu-item
+    a(href="")= title
+
+- const menu1 = ['О нас', 'Новости', 'Как заказать', 'Как получить товар']
+- const menu2 = ['Оплата', 'Доставка', 'Доставка в регионы', 'Контакты']
+- const menu3 = ['Крепеж', 'Такелаж', 'Грузоподъемное оборудование', 'Инструмент']
+
+footer.site-footer
+  .container
+    .footer
+      .footer__section
+        a(href="/").footer__logo
+          img(src="img/footer-logo.svg", alt="НПП ОборонМетиз логотип")
+        ul.social
+          +socialLink('facebook.com', 'facebook')
+          +socialLink('vk.com', 'vk')
+          +socialLink('instagram.com', 'instagram')
+          +socialLink('twitter.com', 'twitter')
+          +socialLink('ok.com', 'ok')
+      .footer__section
+        ul.footer__menu
+          li
+            ul
+              each item in menu1
+                +menuLink(item)
+          li
+            ul
+              each item in menu2
+                +menuLink(item)
+          li
+            ul
+              each item in menu3
+                +menuLink(item)
+      .footer__section
+        .footer__last
+          include ../../components/search/search
+          include ../../components/contacts/contacts
+          .copyright
+            span © 2008–2019 
+            a(href="/") НПП ОборонМетиз
+          

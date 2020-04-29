@@ -1,0 +1,10 @@
+@mixin title($weight) {
+  font-size: 22px;
+  font-weight: $weight;
+}
+
+@mixin listof() {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

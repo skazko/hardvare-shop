@@ -2,12 +2,15 @@ include ../../components/logo/logo
 include ../../components/icon/icon
 
 mixin catalogItem(label, href)
-  li
-    a(href= href)
+  li.catalog__item
+    a.catalog__link(href= href)
       span= label
       .icon
         +icon('arrow-down')
-      
+    //- .dropdown-submenu
+    //-   .container
+    //-     include ../submenu/submenu
+
 
 header.header
   .header__gray
@@ -25,8 +28,8 @@ header.header
           include ../../components/contacts/contacts
         .header__cart
           include ../../components/header-cart/header-cart
-  .header__catalog
-    ul
+  nav.header__catalog
+    ul.catalog
       +catalogItem('Крепеж', '#')
       +catalogItem('Такелаж', '#')
       +catalogItem('Грузоподъемное оборудование', '#')

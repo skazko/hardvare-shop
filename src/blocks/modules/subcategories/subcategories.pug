@@ -1,0 +1,18 @@
+include ../../components/subcategory/subcategory
+
+- const list1 = ['С гайкой', 'С болтом', 'С кольцом', 'С крюком']
+- const list2 = ['Оцинкованные', 'Нержавеющие']
+- const list3 = ['Со шпилькой', 'С болтом', 'С рым-болтом', 'С крюком', 'Анкерная гильза']
+- const list4 = ['Латунные', 'Стальные', 'Стальные с насечками', 'Стальные с буртиком', 'Нержавеющие']
+- const list5 = ['Универсальные (Китай)']
+- const list6 = ['В ампулах','Инжекционная масса','Шпильки к химическим анкерам','Аксессуары']
+- const list7 = ['Анкер фундаментный 1-1','Анкер фундаментный 1-2','Анкер фундаментный 2-1','Анкер фундаментный 2-2']
+
+ul.categories.subcategories
+  +subcategory('Анкерные болты', 'img/anker1.jpg', list1, false, true)
+  +subcategory('Клиновые анкеры', 'img/anker2.jpg', list2, false, true)
+  +subcategory('Анкерные гильзы', 'img/anker3.jpg', list3, false, true)
+  +subcategory('Забивные анкеры', 'img/anker4.jpg', list4, false, true)
+  +subcategory('Рамные анкеры', 'img/anker5.jpg', list5, false, true)
+  +subcategory('Химические анкеры', 'img/anker6.jpg', list6, false, true)
+  +subcategory('Болты анкерные фундаментные', 'img/anker7.jpg', list7, true, true)

@@ -1,0 +1,19 @@
+include ../icon/icon
+
+mixin subcategory(title, img, list, more, needlist)
+  li.subcategory
+    .subcategory__header
+      .subcategory__image
+        .subcategory__image-container
+          img(src= img, alt= title)
+      .subcategory__title
+        a(href="#")= title
+    if needlist
+      ul.subcategory__list
+        each item in list
+          li.subcategory__item
+            a.subcategory__link(href="#")= item
+        if more
+          li.subcategory__show-more
+            a.subcategory__link(href="#") Показать ещё
+              +icon('arrow-down-red')
