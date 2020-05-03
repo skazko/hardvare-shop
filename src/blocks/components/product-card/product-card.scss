@@ -3,7 +3,6 @@
   @include size(4);
   @include size-xl(6);
   @include size-sm(12);
-  // @include size-md(12);
   border: 1px solid #bec0c4;
   border-radius: 10px;
   padding: 20px;
@@ -108,7 +107,7 @@
       text-align: right;
     }
 
-    input[type='submit'] {
+    a {
       color: #ffffff;
       background-color: #e21e23;
       border-radius: 15px;

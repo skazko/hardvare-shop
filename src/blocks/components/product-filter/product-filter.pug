@@ -8,17 +8,21 @@ mixin checkboxes(id)
     .product-filter__content
       ul
         li.product-filter__checkbox
-          input(id= "brand-mkt" + id, type="checkbox", name="brand", checked)
-          label(for= "brand-mkt" + id) МКТ
+          input(id= "brand-mkt" + id, type="checkbox", name="brand-mkt" + id , checked)
+          label(for= "brand-mkt" + id) 
+            span МКТ
         li.product-filter__checkbox
-          input(id= "brand-mungo" + id, type="checkbox", name="brand")
-          label(for="brand-mungo" + id) Mungo
+          input(id= "brand-mungo" + id, type="checkbox", name="brand-mungo" + id)
+          label(for="brand-mungo" + id) 
+            span Mungo
         li.product-filter__checkbox
-          input(id= "brand-sormat" + id, type="checkbox", name="brand", disabled)
-          label(for="brand-sormat" + id) Sormat
+          input(id= "brand-sormat" + id, type="checkbox", name="brand-sormat" + id, disabled)
+          label(for="brand-sormat" + id) 
+            span Sormat
         li.product-filter__checkbox
-          input(id= "brand-china" + id, type="checkbox", name="brand")
-          label(for="brand-china" + id) Китай (без бренда)
+          input(id= "brand-china" + id, type="checkbox", name="brand-china" + id)
+          label(for="brand-china" + id) 
+            span Китай (без бренда)
 
 mixin range()
   .product-filter__section
