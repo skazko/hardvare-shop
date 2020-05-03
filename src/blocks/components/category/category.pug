@@ -1,17 +1,17 @@
 include ../icon/icon
 
 mixin category(title, img, list, more)
-  li.category
+  li.category.showMoreList
     .category__title
       a(href="#")= title
     .category__image
       .category__image-container
         img(src= img, alt= title)
     ul.category__list
-      each item in list
-        li.category__item
-          a.category__link(href="#")= item
-      if more
-        li.category__show-more
-          a.category__link(href="#") Показать ещё
-            +icon('arrow-down-red')
+      each item, index in list
+        li(class= index > 5 & list.length > 7 ? 'category__item hidden' : 'category__item')
+          a.category__link(href="/catalog1.html")= item
+    if list.length > 7
+      .category__show-more.showMore
+        a.category__link.showMoreLink(href="#") Показать ещё
+          +icon('arrow-down-red')

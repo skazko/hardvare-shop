@@ -2,14 +2,24 @@ include ../../components/logo/logo
 include ../../components/icon/icon
 
 mixin catalogItem(label, href)
-  li.catalog__item
-    a.catalog__link(href= href)
+  li.catalog__item.dropdown-item
+    a.catalog__link.dropdown-button(href= href)
       span= label
       .icon
         +icon('arrow-down')
-    //- .dropdown-submenu
-    //-   .container
-    //-     include ../submenu/submenu
+    .dropdown-submenu
+      .container
+        include ../submenu/submenu
+
+mixin gamburger(icon)
+  if icon == 'menu'
+    .header__mmb.inline-icon#menu-button-open
+      +icon(icon)
+  if icon == 'close'
+    .header__mmb.inline-icon#menu-button-close
+      +icon(icon)
+  
+    
 
 
 header.header
@@ -24,12 +34,24 @@ header.header
     .container
       .header__info
         +logo('header__logo ')
+        +gamburger('menu')
         .header__contacts
           include ../../components/contacts/contacts
         .header__cart
           include ../../components/header-cart/header-cart
-  nav.header__catalog
-    ul.catalog
+  nav.header__catalog#main-menu
+    .mobile-top
+      .container
+        .header__info
+          +logo('header__logo ')
+          +gamburger('close')
+    .header__top_mobile
+      .header__search
+        include ../../components/search/search
+      nav.header__top-menu
+        include ../../components/top-menu/top-menu
+
+    ul.catalog.dropdown-list
       +catalogItem('Крепеж', '#')
       +catalogItem('Такелаж', '#')
       +catalogItem('Грузоподъемное оборудование', '#')

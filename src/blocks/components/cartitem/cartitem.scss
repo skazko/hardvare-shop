@@ -1,0 +1,25 @@
+.cart-item {
+  input[type='number'] {
+    box-sizing: border-box;
+    width: 105px;
+    text-align: right;
+    padding: 8px;
+    border: 1px solid #e6e8ec;
+    border-radius: 3px;
+  }
+  &__remove {
+    .inline-icon {
+      svg {
+        width: 18px;
+        height: 20px;
+        margin: 0;
+      }
+    }
+  }
+
+  td {
+    @include md-block {
+      display: block;
+    }
+  }
+}

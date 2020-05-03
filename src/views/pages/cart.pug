@@ -1,0 +1,50 @@
+extends ../layouts/default
+include ../helpers/mixins
+include ../../blocks/components/breadcrumbs/breadcrumbs
+include ../../blocks/components/cartitem/cartitem
+include ../../blocks/modules/seen-before/seen-before
+
+block variables
+  - const title = "НПП ОборонМетиз"
+
+block content
+  +breadcrumbs(['Главная', 'Корзина'])
+  main.cart-page
+    .container
+      .cart
+        .page-title Корзина
+        form.cart__form
+          table.cart__table
+            thead
+              tr
+                th.left Артикул
+                th.left Наименование
+                th Ед. измерения
+                th Цена
+                th Количество
+                th Сумма
+                th Всего штук
+                th 
+            tbody
+              +cartitem('102000150-100', 'Дюбель 4х20 нейлон, Expandet (Экспандет, Дания) (100 штук в упаковке)', 'упаковка', '83,60 ₽', 8, '668,80 ₽', '800', 'item1')
+              +cartitem('102000150-100', 'Дюбель 4х20 нейлон, Expandet (Экспандет, Дания) (100 штук в упаковке)', 'упаковка', '83,60 ₽', 8, '668,80 ₽', '800', 'item2')
+              +cartitem('102000150-100', 'Дюбель 4х20 нейлон, Expandet (Экспандет, Дания) (100 штук в упаковке)', 'упаковка', '83,60 ₽', 8, '668,80 ₽', '800', 'item3')
+        .cart__to-checkout
+          .cart__total
+            table.total-table
+              tbody
+                tr
+                  td Итого:
+                  td 2006,40  ₽
+                tr
+                  td НДС:
+                  td 334,40  ₽
+          .cart__button
+            a.button(href="/checkout.html") Оформить заказ
+
+block aftercontent
+  +afterContentSection('С этими товарами часто покупают')
+
+block scripts
+  script(src="js/main.js")
+  script(src="js/vendor.js")

@@ -8,14 +8,15 @@
   padding-top: 60px;
   padding-bottom: 60px;
   justify-content: space-between;
+  flex-wrap: nowrap;
+
+  @include lg-block {
+    flex-wrap: wrap;
+  }
 
   a,
   a:visited {
     color: inherit;
-  }
-
-  ul {
-    @include listof();
   }
 
   &__logo {
@@ -31,16 +32,27 @@
 
     &:not(:last-of-type) {
       border-right: 1px solid #e6e8ec;
+      @include lg-block {
+        border-right: none;
+        border-bottom: 1px solid #e6e8ec;
+      }
     }
     &:last-of-type {
       flex-grow: 1;
       text-align: right;
+      @include lg-block {
+        // order: 2;
+      }
     }
     &:first-of-type {
       flex-grow: 1;
     }
     &:nth-of-type(2) {
       flex-grow: 4;
+      @include size-lg(12);
+      @include lg-block {
+        // order: 1;
+      }
     }
   }
 
@@ -50,7 +62,17 @@
     font-weight: normal;
     font-size: 16px;
     margin: 0 auto !important;
-    max-width: 650px;
+    // max-width: 650px;
+    flex-wrap: wrap;
+    // margin-right: -15px;
+    // margin-left: -15px;
+
+    & > li {
+      padding: 20px;
+      @include md-block {
+        padding: 20px;
+      }
+    }
   }
 
   &__menu-item {

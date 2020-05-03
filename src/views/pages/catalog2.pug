@@ -1,0 +1,28 @@
+extends ../layouts/main-layout
+include ../helpers/mixins
+include ../../blocks/components/breadcrumbs/breadcrumbs
+include ../../blocks/components/product-filter/product-filter
+
+block variables
+  - const title = "НПП ОборонМетиз - Каталог - Крепеж - Анкеры"
+
+block content
+  +breadcrumbs(['Главная', 'Крепеж', 'Анкеры', 'Анкерные болты'])
+  .container
+    .row.products
+      aside.sidebar
+        +prodfilter(6)
+      main.products-content
+        header.products-header
+          h1.products-title Анкерные болты
+          p.products-description Анкерный болт — крепежный распорный элемент, изготовленный из углеродистой, нержавеющей стали или из сплавов металлов. Анкерные болты широко используются для монтажа различных конструкций и оборудования в полнотелые материалы, такие как: бетон, железобетон, кирпич, природный камень. Анкерный болт один из самых популярных в мире крепежных изделий. Распорный анкерный болт может использоваться для сквозного монтажа конструкций, которые будут подвергаться динамическим нагрузкам. Анкерные болты по размерам: M5 M6 M8 M10 M12 M16.
+        include ../../blocks/modules/products/products
+        .show-more
+          include ../../blocks/components/show-more-button/show-more-button
+        .interesting-products
+          .title Вам может быть интересно
+          include ../../blocks/modules/interesting-products/interesting-products
+  
+block scripts
+  script(src="js/main.js")
+  script(src="js/vendor.js")

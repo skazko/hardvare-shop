@@ -3,6 +3,7 @@ include ../../components/icon/icon
 mixin socialLink(link, icon)
   li.social__item
     a(href= link, target="_blank")
+      span.screen-reader= icon
       +icon(icon)
 
 mixin menuLink(title)

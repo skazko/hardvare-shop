@@ -1,0 +1,24 @@
+extends ../layouts/main-layout
+include ../helpers/mixins
+include ../../blocks/components/breadcrumbs/breadcrumbs
+include ../../blocks/components/product-filter/product-filter
+
+block variables
+  - const title = "Анкерный болт с гайкой М5/6х40 - НПП ОборонМетиз"
+  - const fancybox = true
+
+block content
+  +breadcrumbs(['Главная', 'Крепеж', 'Анкеры', 'Анкерные болты', 'М5/6х40'])
+  .container
+    .row.products
+      aside.sidebar
+        +prodfilter(3)
+      main.products-content
+        include ../../blocks/components/product/product
+        .interesting-products
+          .title Вам может быть интересно
+          include ../../blocks/modules/interesting-products/interesting-products
+block scripts
+  script(src="js/main.js")
+  script(src="js/vendor.js")
+  script(src="js/product.js")

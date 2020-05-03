@@ -1,0 +1,20 @@
+extends ../layouts/main-layout
+include ../helpers/mixins
+include ../../blocks/components/breadcrumbs/breadcrumbs
+
+block variables
+  - const title = "НПП ОборонМетиз - Каталог - Крепеж - Анкеры"
+
+block content
+  +breadcrumbs(['Главная', 'Крепеж', 'Анкеры'])
+  main
+    .container
+      header.products-header
+        h1.products-title Анкеры
+        p.products-description Анкер — крепежное изделие, предназначенное для монтажа оборудования и элементов конструкций в различные материалы. В настоящее время анкера — это наиболее популярные элементы крепежа для тяжелых и ответственных конструкций. В нашем каталоге ассортимент анкеров с подробными техническими характеристиками и их описанием. Технические характеристики анкеров мы постарались подробно описать в разделах.
+      include ../../blocks/modules/subcategories/subcategories
+            
+  
+block scripts
+  script(src="js/main.js")
+  script(src="js/vendor.js")

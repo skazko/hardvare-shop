@@ -1,23 +1,53 @@
 .dropdown-submenu {
-  z-index: 10;
-  display: block;
+  z-index: 10000;
+  display: none;
   position: absolute;
   left: 0;
   right: 0;
   background-color: #e6e8ec;
   color: #0a0a0a;
-  visibility: hidden;
+  @include md-block {
+    position: relative;
+  }
 }
 
 .header {
+  &__mmb {
+    display: none;
+    padding: 30px 0 0 !important;
+    @include col();
+    margin-left: auto;
+    align-self: center;
+    @include md-block {
+      display: block;
+    }
+    svg {
+      margin: 0;
+      width: 30px;
+      height: 30px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
   &__gray {
     background-color: #e6e8ec;
+    @include md(display, none);
   }
 
   &__top {
     @include row-flex();
     align-items: center;
     justify-content: space-between;
+
+    &_mobile {
+      background-color: #e6e8ec;
+      color: #0a0a0a;
+      display: none;
+      @include md-block {
+        display: block;
+      }
+    }
   }
 
   &__search {
@@ -38,22 +68,40 @@
   &__info {
     @include row-flex();
     align-items: center;
-
     & > * {
-      @include col();
       padding-top: 40px;
       padding-bottom: 40px;
     }
   }
 
   &__logo {
-    margin-right: 65px;
+    @include col();
+    padding-right: 65px;
+    @include size-md(9);
+    @include lg-block {
+      padding-right: 0;
+    }
+    @include md-block {
+      padding-bottom: 0;
+      padding-top: 30px;
+      padding-right: 0;
+    }
+
+    a,
+    img {
+      display: block;
+    }
   }
 
   &__contacts {
+    @include col();
     @include size(6.2);
     @include size-xl(4);
     @include size-md(6);
+    @include size-xs(10);
+    @include xs-block {
+      transform-origin: left;
+    }
     .contacts {
       @include xl(flex-wrap, wrap);
 
@@ -64,13 +112,35 @@
   }
 
   &__cart {
+    @include col();
     margin-left: auto;
+    @include xs-block {
+      padding-top: 0;
+
+      transform-origin: right;
+    }
   }
 
   &__catalog {
     background-color: #e21e23;
     color: #ffffff;
     position: relative;
+
+    @include md-block {
+      display: none;
+      background-color: #ffffff;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 100;
+      overflow-y: scroll;
+    }
+
+    &.menu-opened {
+      display: block;
+    }
 
     .catalog {
       max-width: 1920px;
@@ -79,21 +149,21 @@
       padding: 0;
       display: flex;
       justify-content: space-between;
-
-      @media (max-width: 900px) {
-        flex-direction: column;
+      background-color: #e21e23;
+      @include md-block {
+        display: block;
       }
 
       &__item {
         flex-grow: 1;
         border-left: 1px solid #ffffff;
+        @include md-block {
+          border-left: none;
+          border-bottom: 1px solid #ffffff;
+        }
         &:last-of-type {
           border-right: 1px solid #ffffff;
-        }
-
-        &:hover > .dropdown-submenu,
-        &:focus-within > .dropdown-submenu {
-          visibility: visible;
+          @include md(border, none);
         }
       }
 
@@ -121,5 +191,48 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+  }
+}
+
+.dropdown-list {
+  .dropdown-item {
+    .dropdown-button {
+      svg {
+        transition: transform 0.5s;
+      }
+    }
+  }
+}
+
+.dropdown-opened > a > .icon > svg {
+  transform: rotateX(180deg);
+}
+
+.close-menu {
+  width: 30px;
+  height: 30px;
+  margin-left: auto;
+  padding: 30px 0;
+}
+
+.mobile-top {
+  display: none;
+  background-color: #ffffff;
+  color: #0a0a0a;
+  padding-bottom: 30px;
+  @include md-block {
+    display: block;
+  }
+}
+
+.top-menu {
+  @include xs-block {
+    display: block;
+    text-align: center;
+  }
+  li {
+    @include xs-block {
+      padding: 15px 0;
+    }
   }
 }

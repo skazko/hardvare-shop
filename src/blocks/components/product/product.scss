@@ -1,0 +1,255 @@
+.dashlist {
+  &__item {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 10px;
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      width: 100%;
+      height: 2px;
+      border-top: 1px dashed #e6e8ec;
+      @include sm(display, none);
+    }
+  }
+  &__key {
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    background: #fff;
+    padding-right: 5px;
+    @include sm-block {
+      display: inline;
+    }
+    &::after {
+      @include sm-block {
+        content: ' : ';
+      }
+    }
+  }
+  &__value {
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 0;
+    width: 120px;
+    z-index: 2;
+    background: #fff;
+    padding-left: 5px;
+    @include sm-block {
+      display: inline;
+      position: relative;
+      width: auto;
+    }
+  }
+}
+
+.product {
+  .products-header {
+    margin-bottom: 40px;
+  }
+  &__information {
+    @include row-flex();
+
+    font-weight: normal;
+    font-size: 15px;
+    margin-bottom: 50px;
+  }
+
+  &__features-title {
+    font-weight: 600;
+    font-size: 18px;
+
+    &.inline-icon {
+      svg {
+        transition: transform 0.2s ease;
+      }
+    }
+  }
+
+  &__gallery {
+    @include col();
+    @include size(5.33);
+    @include size-md(12);
+  }
+
+  &__features {
+    @include col();
+    @include size(6.66);
+    @include size-md(12);
+  }
+
+  &__features-content {
+    &.dashlist {
+      width: 490px;
+      @include sm(width, 100%);
+    }
+  }
+
+  &__features-section {
+    .product__features-title {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    &_opened {
+      .inline-icon {
+        svg {
+          transform: rotateX(180deg) translateY(-5px);
+        }
+      }
+    }
+  }
+
+  &__features-content {
+    padding-top: 20px;
+    overflow: hidden;
+  }
+
+  &__features-item {
+    margin-bottom: 30px;
+
+    &.tomorrow {
+      font-weight: 600;
+      font-size: 18px;
+
+      svg {
+        width: 18px;
+        height: 18px;
+        top: 2px;
+      }
+    }
+  }
+
+  &__features-value {
+    font-weight: 600;
+    font-size: 18px;
+    color: #e21e23;
+  }
+
+  &__order {
+    .order-form {
+      &__count {
+        input {
+          font-size: 22px;
+          font-weight: 400;
+          padding: 6px 0px;
+        }
+      }
+      &__order-button {
+        font-weight: bold;
+        font-size: 26px;
+        div {
+          margin-bottom: 20px;
+        }
+        input[type='submit'] {
+          font-size: 22px;
+          font-weight: 600;
+          padding: 10px 80px;
+          border-radius: 22.5px;
+        }
+      }
+    }
+  }
+
+  &__description {
+    font-weight: normal;
+    font-size: 18px;
+    margin-bottom: 60px;
+    p {
+      margin: 10px 0;
+    }
+  }
+
+  &__sizes {
+    padding: 50px;
+    border: 1px solid #e6e8ec;
+    border-radius: 5px;
+
+    .product__features-title {
+      margin-bottom: 20px;
+    }
+
+    ul {
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 40px;
+      column-count: 7;
+      column-gap: 40px;
+
+      @include xl(column-count, 5);
+      @include md(column-count, 3);
+      @include sm(column-count, 2);
+      @include xs(column-count, 1);
+
+      li:hover {
+        color: #e21e23;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .splide {
+    &__zoom-in-button {
+      position: absolute;
+      width: 23px;
+      height: 25px;
+      z-index: 10;
+      top: 30px;
+      right: 30px;
+      @include sm(display, none);
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &__arrow {
+      top: auto;
+      transform: none;
+      bottom: 30px;
+      width: 40px;
+      height: 40px;
+      background-color: #ffffff;
+      border: 1px solid #e6e8ec;
+
+      svg {
+        width: 40px;
+        height: 40px;
+        color: #e21e23;
+      }
+
+      &--prev {
+        left: 30px;
+      }
+
+      &--next {
+        right: 30px;
+      }
+    }
+  }
+
+  &__image {
+    border: 1px solid #e6e8ec;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 30px;
+  }
+
+  &__features-section {
+    margin-bottom: 30px;
+  }
+
+  &__thumbnails {
+    @include md(margin-bottom, 30px);
+    .splide {
+      &--nav > .splide__track > .splide__list > .splide__slide {
+        border: 1px solid #e6e8ec;
+        border-radius: 3px;
+      }
+    }
+  }
+}

@@ -1,0 +1,116 @@
+.product-filter {
+  font-weight: normal;
+  font-size: 15px;
+  &__section {
+    padding: 20px;
+    border: 1px solid #e6e8ec;
+    border-radius: 5px;
+    margin-bottom: 30px;
+  }
+
+  &__checkbox {
+    margin-bottom: 10px;
+    input {
+      position: absolute;
+      left: -9999px;
+    }
+    label {
+      position: relative;
+      padding-left: 23px;
+      cursor: pointer;
+    }
+    label:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 1.5px;
+      width: 11px;
+      height: 11px;
+      border: 1px solid #bec0c4;
+      background: #fff;
+      border-radius: 2px;
+    }
+
+    label:after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 14px;
+      height: 14px;
+      top: -2px;
+      left: 1.5px;
+      background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='1.41421' y1='8' x2='5.4357' y2='12.0215' stroke='%23308B05' stroke-width='2' stroke-linecap='round'/%3E%3Cline x1='12.4478' y1='5.86148' x2='5.86197' y2='12.4473' stroke='%23308B05' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+    }
+    input:not(:checked) + label:after {
+      opacity: 0;
+    }
+    input:checked + label:after {
+      opacity: 1;
+    }
+
+    input:disabled + label:before {
+      border-color: #bec0c4;
+      background-color: #e6e8ec;
+    }
+    input:disabled:checked + label:after {
+      opacity: 0.3;
+    }
+    input:disabled + label {
+      color: #bec0c4;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 17px;
+    margin-bottom: 15px;
+    &:hover {
+      cursor: pointer;
+    }
+    svg {
+      margin-right: 10px;
+      display: inline-block;
+      width: 13px;
+      height: 12px;
+      position: relative;
+      top: -1px;
+    }
+  }
+
+  &__range {
+    font-weight: normal;
+    font-size: 15px;
+    input {
+      width: 120px;
+      background: #ffffff;
+      border: 1px solid #e6e8ec;
+      border-radius: 2px;
+      box-sizing: border-box;
+      padding: 10.5px;
+      text-align: right;
+    }
+  }
+
+  &__min {
+    margin-right: 24px;
+  }
+  &__max {
+    margin-right: 10px;
+  }
+}
+
+.range {
+  &__inputs {
+    margin-bottom: 20px;
+  }
+  &__labels {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.noUi-touch-area:focus,
+.noUi-handle:focus {
+  outline: none;
+}

@@ -3,6 +3,7 @@
   @include size(3);
   @include size-xl(4);
   @include size-lg(6);
+  @include size-sm(12);
   // flex: 0 0 382.5px;
   // same in cats;
   border-radius: 5px;
@@ -14,6 +15,9 @@
     display: flex;
     align-items: center;
     padding: 30px;
+    @include xs-block {
+      flex-direction: column;
+    }
   }
 
   &__title {
@@ -60,6 +64,8 @@
   }
 
   &__show-more {
+    font-weight: 300;
+    font-size: 18px;
     padding: 18px 30px;
   }
 

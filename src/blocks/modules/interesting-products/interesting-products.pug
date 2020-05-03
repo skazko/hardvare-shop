@@ -1,0 +1,18 @@
+include ../../components/icon/icon
+
+mixin iproduct(title, img)
+  li.subcategory
+    .subcategory__header
+      .subcategory__image
+        .subcategory__image-container
+          img(src= img, alt= title)
+      .subcategory__title
+        a(href="#")= title
+
+ul.categories
+  +iproduct('Клиновые анкеры', 'img/anker2.jpg')
+  +iproduct('Анкерные гильзы', 'img/anker3.jpg')
+  +iproduct('Забивные анкеры', 'img/anker4.jpg')
+  +iproduct('Рамные анкеры', 'img/anker5.jpg')
+  +iproduct('Химические анкеры', 'img/anker6.jpg')
+  +iproduct('Болты анкерные фундаментные', 'img/anker7.jpg')

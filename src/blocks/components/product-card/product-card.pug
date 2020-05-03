@@ -1,0 +1,18 @@
+mixin product-card(image)
+  li.product-card
+    .product-card__info
+      .product-card__image
+        img(src= image, alt="Название продукта")
+      .product-card__details
+        a.product-card__title(href="/product.html") Анкерный болт с гайкой М5/6х40
+        ul.product-card__features
+          li.product-card__feature Упаковка: 200 шт.
+          li.product-card__feature.product-card__feature_tomorrow
+            +icon('i-tomorrow')
+            span Получить завтра
+    form.product-card__order(action="#")
+      .product-card__count
+        input(type="number", name="count", value="1")
+      .product-card__order-button
+        div 708,00 ₽
+        input(type="submit", value="Купить")

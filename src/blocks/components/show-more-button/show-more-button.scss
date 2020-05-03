@@ -1,0 +1,23 @@
+.show-more {
+  text-align: center;
+  margin-bottom: 120px;
+}
+
+.show-more-button {
+  border: none;
+  background-color: #0a0a0a;
+  color: #ffffff;
+  padding: 19px 47px;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 30px;
+  &::after {
+    display: inline-block;
+    margin-left: 10px;
+    content: '';
+    border-top: 8px solid;
+    border-right: 7px solid transparent;
+    border-bottom: 0;
+    border-left: 7px solid transparent;
+  }
+}

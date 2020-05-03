@@ -1,0 +1,49 @@
+include ../icon/icon
+
+mixin checkboxes(id)
+  .product-filter__section
+    .product-filter__title 
+      +icon('arrow-down-red')
+      span Производитель
+    .product-filter__content
+      ul
+        li.product-filter__checkbox
+          input(id= "brand-mkt" + id, type="checkbox", name="brand", checked)
+          label(for= "brand-mkt" + id) МКТ
+        li.product-filter__checkbox
+          input(id= "brand-mungo" + id, type="checkbox", name="brand")
+          label(for="brand-mungo" + id) Mungo
+        li.product-filter__checkbox
+          input(id= "brand-sormat" + id, type="checkbox", name="brand", disabled)
+          label(for="brand-sormat" + id) Sormat
+        li.product-filter__checkbox
+          input(id= "brand-china" + id, type="checkbox", name="brand")
+          label(for="brand-china" + id) Китай (без бренда)
+
+mixin range()
+  .product-filter__section
+    .product-filter__title 
+      +icon('arrow-down-red')
+      span Общая длина анкера
+    .product-filter__content
+      .product-filter__range.range
+        .range__inputs
+          span от
+          input.product-filter__min(class="range__length-min", type="text")
+          span до
+          input.product-filter__max(class="range__length-max", type="text")
+          span мм
+        .range__labels
+          span 16
+          span 256
+          span 500
+        .nouislider
+
+
+mixin prodfilter(count)
+  - var n = 0
+  form.product-filter
+    while (n < count)
+      +checkboxes(++n)
+      +range()
+    

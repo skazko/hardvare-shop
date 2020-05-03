@@ -11,6 +11,10 @@
   &__item {
     @include col();
     @include size(2);
+    @include size-xl(3);
+    @include size-md(4);
+    @include size-sm(6);
+    @include size-xs(12);
     padding-top: 15px;
     padding-bottom: 15px;
   }

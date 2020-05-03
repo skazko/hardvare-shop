@@ -63,8 +63,12 @@
     "yargs": "~13.2.4"
   },
   "dependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
+    "@splidejs/splide": "^2.2.4",
+    "accordion-js": "^2.8.0",
     "jquery": "1.12.4",
     "lodash": "^4.17.15",
+    "nouislider": "^14.2.0",
     "smart-grid": "^2.1.2"
   },
   "lint-staged": {

@@ -3,7 +3,7 @@
   @include size(3);
   @include size-xl(4);
   @include size-lg(6);
-  // flex: 0 0 382.5px;
+  @include size-sm(12);
   border-radius: 5px;
   border: 1px solid #e6e8ec;
   margin-top: 15px;
@@ -55,6 +55,8 @@
 
   &__show-more {
     padding: 18px 30px;
+    font-weight: 300;
+    font-size: 18px;
   }
 
   &__link {

@@ -1,10 +1,11 @@
 extends default
+include ../../blocks/modules/seen-before/seen-before
 
 block variables
 
 block content
 		
 block aftercontent  
-  include ../../blocks/modules/seen-before/seen-before
+  +afterContentSection('Вы просматривали ранее')
 	
 block scripts

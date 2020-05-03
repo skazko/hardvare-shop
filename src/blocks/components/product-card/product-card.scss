@@ -1,0 +1,121 @@
+.product-card {
+  @include col();
+  @include size(4);
+  @include size-xl(6);
+  @include size-sm(12);
+  // @include size-md(12);
+  border: 1px solid #bec0c4;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+  &__image {
+    width: 140px;
+    overflow: hidden;
+    border-radius: 3px;
+    border: 1px solid #e6e8ec;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    @include xs-block {
+      width: 100%;
+    }
+  }
+
+  &__details {
+    margin-bottom: 15px;
+  }
+
+  &__info {
+    display: flex;
+    margin-bottom: 5px;
+
+    @include xs-block {
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    font-weight: normal;
+    font-size: 17px;
+    margin-bottom: 20px;
+    display: block;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: #e21e23;
+    }
+  }
+
+  &__features {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-size: 15px;
+    color: #bec0c4;
+  }
+
+  &__feature {
+    &:not(:last-of-type) {
+      margin-bottom: 10px;
+    }
+    &_tomorrow {
+      svg {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        position: relative;
+        top: 2px;
+        margin-right: 7px;
+      }
+      color: #ff9635;
+    }
+  }
+
+  &__order {
+    display: flex;
+    align-items: flex-end;
+    margin-top: auto;
+    justify-content: space-between;
+
+    & > * {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__count {
+    input {
+      width: 104px;
+      text-align: right;
+      border-radius: 3px;
+      border: 1px solid #e6e8ec;
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 18px;
+      padding: 2.5px 0px;
+    }
+  }
+
+  &__order-button {
+    font-weight: bold;
+    font-size: 20px;
+    color: #e21e23;
+
+    div {
+      margin-bottom: 10px;
+      text-align: right;
+    }
+
+    input[type='submit'] {
+      color: #ffffff;
+      background-color: #e21e23;
+      border-radius: 15px;
+      font-weight: bold;
+      font-size: 15px;
+      border: none;
+      padding: 4px 28px;
+    }
+  }
+}
