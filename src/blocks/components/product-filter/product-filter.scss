@@ -12,53 +12,51 @@
     margin-bottom: 10px;
     input {
       position: absolute;
-      left: -9999px;
-    }
-    label {
-      position: relative;
-      cursor: pointer;
-      span {
-        vertical-align: middle;
-      }
-    }
-    label:before {
-      content: '';
-      vertical-align: middle;
-      display: inline-block;
-      width: 11px;
-      height: 11px;
-      border: 1px solid #bec0c4;
-      background: #fff;
-      border-radius: 2px;
-      margin-right: 10px;
-    }
-
-    label:after {
-      content: '';
-      position: absolute;
-      display: block;
-      width: 14px;
-      height: 14px;
-      top: 0px;
-      left: 1px;
-      background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='1.41421' y1='8' x2='5.4357' y2='12.0215' stroke='%23308B05' stroke-width='2' stroke-linecap='round'/%3E%3Cline x1='12.4478' y1='5.86148' x2='5.86197' y2='12.4473' stroke='%23308B05' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E%0A");
-    }
-    input:not(:checked) + label:after {
       opacity: 0;
-    }
-    input:checked + label:after {
-      opacity: 1;
-    }
+      pointer-events: none;
+      + span {
+        position: relative;
+        padding-left: 25px;
+        cursor: pointer;
+        display: inline-block;
+        height: 22px;
+        line-height: 22px;
+        font-size: 15px;
+        user-select: none;
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 13px;
+          height: 13px;
+          z-index: 0;
+          border: 1px solid #bec0c4;
+          border-radius: 2px;
+          margin-top: 3px;
+          transition: 0.2s;
+        }
 
-    input:disabled + label:before {
-      border-color: #bec0c4;
-      background-color: #e6e8ec;
-    }
-    input:disabled:checked + label:after {
-      opacity: 0.3;
-    }
-    input:disabled + label {
-      color: #bec0c4;
+        &::after {
+          content: '';
+          position: absolute;
+        }
+      }
+      &:disabled + span::before {
+        border-color: #bec0c4;
+        background-color: #e6e8ec;
+      }
+      &:disabled + span {
+        color: #bec0c4;
+      }
+      &:checked + span::after {
+        top: 0;
+        left: 2px;
+        width: 15px;
+        height: 15px;
+        background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='1.41421' y1='8' x2='5.4357' y2='12.0215' stroke='%23308B05' stroke-width='2' stroke-linecap='round'/%3E%3Cline x1='12.4478' y1='5.86148' x2='5.86197' y2='12.4473' stroke='%23308B05' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+        background-size: cover;
+      }
     }
   }
 
